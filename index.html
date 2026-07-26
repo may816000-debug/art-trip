@@ -32,7 +32,7 @@ body{
 
 /* ═══ HERO — Gallery Wall ═══ */
 .masthead{
-  margin:0 20px;padding:120px 0 80px;
+  margin:0 20px;padding:120px 0 72px;
   border-bottom:1px solid rgba(0,0,0,.08);
 }
 .masthead .classification{
@@ -47,7 +47,7 @@ body{
 .masthead h1 .line2{display:block;font-size:.28em;font-weight:400;letter-spacing:.18em;
   color:var(--mist);margin-top:.8em;font-family:var(--font-sans);text-transform:uppercase}
 .masthead .dateline{
-  display:flex;gap:48px;margin-top:48px;font-size:.72rem;letter-spacing:.1em;
+  display:flex;gap:48px;margin-top:40px;font-size:.72rem;letter-spacing:.1em;
   color:var(--mist);font-weight:400;
 }
 .masthead .dateline span{position:relative}
@@ -55,7 +55,7 @@ body{
 
 /* Cover Image — CSS Geometric Composition */
 .cover{
-  margin:0 20px 60px;height:420px;background:var(--ink);position:relative;overflow:hidden;
+  margin:0 20px 48px;height:420px;background:var(--ink);position:relative;overflow:hidden;
 }
 .cover .comp-1{
   position:absolute;top:12%;left:18%;width:28%;height:38%;
@@ -82,36 +82,36 @@ body{
 /* ═══ CONTENT ═══ */
 .content{max-width:780px;margin:0 auto;padding:0 20px}
 
-/* Section divider */
-.rule{height:1px;background:rgba(0,0,0,.08);margin:64px 0}
+/* Section divider — compact where detail is needed, generous between zones */
+.rule{height:1px;background:rgba(0,0,0,.08);margin:48px 0}
 
 /* Section heading */
 .sec-label{
   font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--rust);margin-bottom:36px;font-weight:500;
+  color:var(--rust);margin-bottom:24px;font-weight:500;
 }
 
-/* ═══ AT-A-GLANCE ═══ */
+/* ═══ AT-A-GLANCE — compact stat strip ═══ */
 .glance{
   display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(0,0,0,.06);
-  margin-bottom:64px;
+  margin-bottom:48px;
 }
-.glance .cell{background:var(--paper);padding:28px 0;text-align:center}
-.glance .cell .figure{font-size:2rem;font-weight:300;color:var(--ink);line-height:1;letter-spacing:-.02em}
-.glance .cell .label{font-size:.62rem;color:var(--mist);margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
+.glance .cell{background:var(--paper);padding:20px 0;text-align:center}
+.glance .cell .figure{font-size:1.8rem;font-weight:300;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.glance .cell .label{font-size:.6rem;color:var(--mist);margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
 
 /* ═══ DUO: Two activities ═══ */
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.06);margin-bottom:64px}
-.duo .pane{background:var(--paper);padding:44px 40px 36px}
-.duo .pane .pane-num{font-size:.62rem;letter-spacing:.2em;color:var(--mist);margin-bottom:24px;font-weight:500}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(0,0,0,.06);margin-bottom:48px}
+.duo .pane{background:var(--paper);padding:32px 32px 28px}
+.duo .pane .pane-num{font-size:.62rem;letter-spacing:.2em;color:var(--mist);margin-bottom:16px;font-weight:500}
 .duo .pane h3{font-size:1.2rem;font-weight:400;letter-spacing:.02em;margin-bottom:4px;color:var(--ink)}
-.duo .pane .subtitle{font-size:.76rem;color:var(--mist);font-weight:400;margin-bottom:28px}
-.duo .pane .field{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.74rem}
+.duo .pane .subtitle{font-size:.74rem;color:var(--mist);font-weight:400;margin-bottom:20px}
+.duo .pane .field{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.72rem}
 .duo .pane .field .key{color:var(--mist);font-weight:400}
 .duo .pane .field .val{color:var(--charcoal);font-weight:500}
 .duo .pane .alert{
-  margin-top:24px;padding:16px 20px;background:rgba(181,69,44,.04);
-  font-size:.68rem;color:var(--rust);line-height:1.7;letter-spacing:.02em;
+  margin-top:20px;padding:12px 16px;background:rgba(181,69,44,.04);
+  font-size:.66rem;color:var(--rust);line-height:1.7;letter-spacing:.02em;
 }
 
 /* ═══ METRO ═══ */
@@ -148,13 +148,15 @@ body{
   width:1px;background:rgba(0,0,0,.08);
 }
 .timeline .entry{position:relative;margin-bottom:36px}
+/* .entry starts at left edge AFTER 120px padding of .timeline */
+/* So dot at timeline-line(70px) means left:70-120 = -50px from .entry */
 .timeline .entry .time{
   position:absolute;left:-120px;top:0;width:96px;text-align:right;
   font-size:.82rem;font-weight:500;color:var(--ink);letter-spacing:.02em;
   font-family:var(--font-serif);
 }
 .timeline .entry .dot{
-  position:absolute;left:70px;top:9px;width:13px;height:13px;
+  position:absolute;left:-50px;top:9px;width:13px;height:13px;
   border-radius:50%;border:2px solid var(--charcoal);background:var(--paper);z-index:1;
   transform:translateX(-50%);
 }
@@ -166,16 +168,16 @@ body{
 /* ═══ NOTES ═══ */
 .note{
   border-top:1px solid rgba(0,0,0,.06);
-  padding:28px 0;font-size:.76rem;line-height:1.8;
-  display:flex;gap:20px;
+  padding:20px 0;font-size:.74rem;line-height:1.7;
+  display:flex;gap:16px;
 }
-.note .note-label{font-size:.62rem;letter-spacing:.16em;color:var(--rust);font-weight:500;min-width:56px}
+.note .note-label{font-size:.6rem;letter-spacing:.16em;color:var(--rust);font-weight:500;min-width:48px}
 .note .note-text{color:var(--charcoal);font-weight:400}
 
 /* ═══ CLOSING ═══ */
 .closing{
-  text-align:center;padding:100px 0 60px;
-  font-size:.72rem;color:var(--mist);letter-spacing:.08em;line-height:2.5;font-weight:400;
+  text-align:center;padding:72px 0 40px;
+  font-size:.7rem;color:var(--mist);letter-spacing:.08em;line-height:2.5;font-weight:400;
 }
 .closing em{font-style:normal;color:var(--ink);font-weight:600}
 
@@ -187,25 +189,25 @@ body{
   .masthead h1 .line2{font-size:.32em}
   .masthead .dateline{gap:20px;font-size:.66rem;flex-wrap:wrap}
   .masthead .dateline span+span::before{left:-12px}
-  .cover{margin:0 12px 40px;height:240px}
+  .cover{margin:0 12px 32px;height:240px}
   .content{padding:0 12px}
   .glance{grid-template-columns:repeat(3,1fr)}
-  .glance .cell{padding:20px 0}
+  .glance .cell{padding:16px 0}
   .glance .cell:nth-child(4),.glance .cell:nth-child(5){display:none}
-  .glance .cell .figure{font-size:1.5rem}
+  .glance .cell .figure{font-size:1.4rem}
   .duo{grid-template-columns:1fr}
-  .duo .pane{padding:28px 24px 24px}
+  .duo .pane{padding:24px 20px 20px}
   .timeline{padding-left:80px}
   .timeline::before{left:50px}
   .timeline .entry .time{left:-80px;width:60px;font-size:.72rem}
-  .timeline .entry .dot{left:50px;transform:translateX(-50%)}
+  .timeline .entry .dot{left:-30px;transform:translateX(-50%)}
   .metro-schematic .leg{padding-left:60px}
   .metro-schematic .leg-label{width:44px;font-size:.56rem}
   .xfer-badge{margin-left:60px}
   .metro-schematic .connector{min-width:12px;margin:0 4px}
   .metro-schematic .station .name{font-size:.66rem}
-  .rule{margin:40px 0}
-  .sec-label{margin-bottom:24px}
+  .rule{margin:32px 0}
+  .sec-label{margin-bottom:18px}
 }
 </style>
 </head>
