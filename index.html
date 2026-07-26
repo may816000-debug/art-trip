@@ -141,29 +141,33 @@ body{
   margin:20px 0 8px 80px;
 }
 
-/* ═══ TIMELINE ═══ */
-.timeline{position:relative;padding-left:120px}
+/* ═══ TIMELINE — Grid layout, no absolute positioning ═══ */
+.timeline{
+  position:relative;
+}
 .timeline::before{
-  content:'';position:absolute;left:70px;top:0;bottom:0;
+  content:'';position:absolute;
+  left:108px;top:0;bottom:0; /* 96px time + 12px (half dot col) */
   width:1px;background:rgba(0,0,0,.08);
 }
-.timeline .entry{position:relative;margin-bottom:36px}
-/* .entry starts at left edge AFTER 120px padding of .timeline */
-/* So dot at timeline-line(70px) means left:70-120 = -50px from .entry */
-.timeline .entry .time{
-  position:absolute;left:-120px;top:0;width:96px;text-align:right;
-  font-size:.82rem;font-weight:500;color:var(--ink);letter-spacing:.02em;
-  font-family:var(--font-serif);
+.entry{
+  display:grid;grid-template-columns:96px 24px 1fr;
+  align-items:start;margin-bottom:32px;
 }
-.timeline .entry .dot{
-  position:absolute;left:-50px;top:9px;width:13px;height:13px;
-  border-radius:50%;border:2px solid var(--charcoal);background:var(--paper);z-index:1;
-  transform:translateX(-50%);
+.tl-time{
+  text-align:right;padding-right:12px;
+  font-size:.82rem;font-weight:500;color:var(--ink);
+  font-family:var(--font-serif);letter-spacing:.02em;line-height:1.4;
 }
-.timeline .entry .dot.highlight{background:var(--gold);border-color:var(--gold)}
-.timeline .entry .body{padding-left:36px}
-.timeline .entry .body .action{font-size:.82rem;font-weight:500;color:var(--ink)}
-.timeline .entry .body .hint{font-size:.68rem;color:var(--mist);margin-top:4px;font-weight:400;letter-spacing:.02em}
+.tl-dot{
+  width:13px;height:13px;border-radius:50%;
+  border:2px solid var(--charcoal);background:var(--paper);
+  justify-self:center;position:relative;z-index:1;margin-top:7px;
+}
+.tl-dot.highlight{background:var(--gold);border-color:var(--gold)}
+.tl-body{padding-left:12px}
+.tl-body .action{font-size:.82rem;font-weight:500;color:var(--ink)}
+.tl-body .hint{font-size:.68rem;color:var(--mist);margin-top:3px;font-weight:400;letter-spacing:.02em}
 
 /* ═══ NOTES ═══ */
 .note{
@@ -197,10 +201,10 @@ body{
   .glance .cell .figure{font-size:1.4rem}
   .duo{grid-template-columns:1fr}
   .duo .pane{padding:24px 20px 20px}
-  .timeline{padding-left:80px}
-  .timeline::before{left:50px}
-  .timeline .entry .time{left:-80px;width:60px;font-size:.72rem}
-  .timeline .entry .dot{left:-30px;transform:translateX(-50%)}
+  .timeline::before{left:72px}
+  .entry{grid-template-columns:60px 24px 1fr;margin-bottom:24px}
+  .tl-time{font-size:.72rem}
+  .tl-dot{margin-top:5px;width:11px;height:11px}
   .metro-schematic .leg{padding-left:60px}
   .metro-schematic .leg-label{width:44px;font-size:.56rem}
   .xfer-badge{margin-left:60px}
@@ -315,65 +319,65 @@ body{
 
 <div class="timeline">
   <div class="entry">
-    <div class="time">15:00</div>
-    <div class="dot highlight"></div>
-    <div class="body">
+    <div class="tl-time">15:00</div>
+    <div class="tl-dot highlight"></div>
+    <div class="tl-body">
       <div class="action">古翠路出发，步行至宝岛眼镜</div>
       <div class="hint">文三路 486 号 · 距地铁站约 350 米</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">15:10</div>
-    <div class="dot"></div>
-    <div class="body">
+    <div class="tl-time">15:10</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
       <div class="action">验光</div>
       <div class="hint">约 25 分钟 · 可提前致电确认验光师在岗</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">15:40</div>
-    <div class="dot"></div>
-    <div class="body">
+    <div class="tl-time">15:40</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
       <div class="action">古翠路站上车</div>
       <div class="hint">2 号线朝阳方向 → 3 站至武林门</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">15:55</div>
-    <div class="dot"></div>
-    <div class="body">
+    <div class="tl-time">15:55</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
       <div class="action">武林门换乘 3 号线</div>
       <div class="hint">星桥方向 → 4 站至香积寺</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">16:10</div>
-    <div class="dot highlight"></div>
-    <div class="body">
+    <div class="tl-time">16:10</div>
+    <div class="tl-dot highlight"></div>
+    <div class="tl-body">
       <div class="action">抵达英蓝中心</div>
       <div class="hint">香积寺站 C 口出 · 步行 5 分钟 · 楼下 %Arabica 可小憩</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">16:10<br>—<br>18:00</div>
-    <div class="dot highlight"></div>
-    <div class="body">
+    <div class="tl-time">16:10<br>—<br>18:00</div>
+    <div class="tl-dot highlight"></div>
+    <div class="tl-body">
       <div class="action">参观「象外」</div>
       <div class="hint">14 位艺术家 · 从容逛约 2 小时 · 建议提前小程序购票</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">18:00</div>
-    <div class="dot"></div>
-    <div class="body">
+    <div class="tl-time">18:00</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
       <div class="action">运河畔散步</div>
       <div class="hint">京杭大运河 + 香积寺外观 · 傍晚光线最佳</div>
     </div>
   </div>
   <div class="entry">
-    <div class="time">18:30</div>
-    <div class="dot"></div>
-    <div class="body">
+    <div class="tl-time">18:30</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
       <div class="action">大兜路历史街区晚餐</div>
       <div class="hint">步行 5 分钟 · 推荐江南驿 / 香积寺素斋</div>
     </div>
