@@ -154,8 +154,9 @@ body{
   font-family:var(--font-serif);
 }
 .timeline .entry .dot{
-  position:absolute;left:64px;top:6px;width:13px;height:13px;
+  position:absolute;left:70px;top:9px;width:13px;height:13px;
   border-radius:50%;border:2px solid var(--charcoal);background:var(--paper);z-index:1;
+  transform:translateX(-50%);
 }
 .timeline .entry .dot.highlight{background:var(--gold);border-color:var(--gold)}
 .timeline .entry .body{padding-left:36px}
@@ -197,7 +198,7 @@ body{
   .timeline{padding-left:80px}
   .timeline::before{left:50px}
   .timeline .entry .time{left:-80px;width:60px;font-size:.72rem}
-  .timeline .entry .dot{left:44px}
+  .timeline .entry .dot{left:50px;transform:translateX(-50%)}
   .metro-schematic .leg{padding-left:60px}
   .metro-schematic .leg-label{width:44px;font-size:.56rem}
   .xfer-badge{margin-left:60px}
