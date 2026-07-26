@@ -18,14 +18,16 @@ html{background:var(--paper);scroll-behavior:smooth}
 body{
   font-family:var(--font-sans);background:var(--paper);color:var(--charcoal);
   line-height:1.6;-webkit-font-smoothing:antialiased;
-  font-weight:350;
+  font-weight:400;
 }
 
 /* ═══ NAVIGATION ═══ */
 .nav{
-  position:sticky;top:0;z-index:100;mix-blend-mode:difference;
+  position:sticky;top:0;z-index:100;
+  background:rgba(244,242,238,.85);backdrop-filter:blur(12px);
   padding:14px 28px;display:flex;justify-content:space-between;
-  font-size:.72rem;letter-spacing:.12em;font-weight:450;color:var(--paper);
+  font-size:.72rem;letter-spacing:.12em;font-weight:500;color:var(--charcoal);
+  border-bottom:1px solid rgba(0,0,0,.04);
 }
 
 /* ═══ HERO — Gallery Wall ═══ */
@@ -39,17 +41,17 @@ body{
 }
 .masthead h1{
   font-family:var(--font-serif);font-size:clamp(3rem,7vw,5.2rem);
-  font-weight:250;line-height:1.05;letter-spacing:-.02em;
+  font-weight:300;line-height:1.05;letter-spacing:-.02em;
   color:var(--ink);max-width:14em;
 }
-.masthead h1 .line2{display:block;font-size:.28em;font-weight:350;letter-spacing:.18em;
+.masthead h1 .line2{display:block;font-size:.28em;font-weight:400;letter-spacing:.18em;
   color:var(--mist);margin-top:.8em;font-family:var(--font-sans);text-transform:uppercase}
 .masthead .dateline{
   display:flex;gap:48px;margin-top:48px;font-size:.72rem;letter-spacing:.1em;
   color:var(--mist);font-weight:400;
 }
 .masthead .dateline span{position:relative}
-.masthead .dateline span+span::before{content:'·';position:absolute;left:-26px;color:var(--stone)}
+.masthead .dateline span+span::before{content:'·';position:absolute;left:-26px;color:var(--mist)}
 
 /* Cover Image — CSS Geometric Composition */
 .cover{
@@ -95,7 +97,7 @@ body{
   margin-bottom:64px;
 }
 .glance .cell{background:var(--paper);padding:28px 0;text-align:center}
-.glance .cell .figure{font-size:2rem;font-weight:200;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.glance .cell .figure{font-size:2rem;font-weight:300;color:var(--ink);line-height:1;letter-spacing:-.02em}
 .glance .cell .label{font-size:.62rem;color:var(--mist);margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
 
 /* ═══ DUO: Two activities ═══ */
@@ -103,10 +105,10 @@ body{
 .duo .pane{background:var(--paper);padding:44px 40px 36px}
 .duo .pane .pane-num{font-size:.62rem;letter-spacing:.2em;color:var(--mist);margin-bottom:24px;font-weight:500}
 .duo .pane h3{font-size:1.2rem;font-weight:400;letter-spacing:.02em;margin-bottom:4px;color:var(--ink)}
-.duo .pane .subtitle{font-size:.76rem;color:var(--mist);font-weight:350;margin-bottom:28px}
+.duo .pane .subtitle{font-size:.76rem;color:var(--mist);font-weight:400;margin-bottom:28px}
 .duo .pane .field{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.74rem}
-.duo .pane .field .key{color:var(--mist);font-weight:350}
-.duo .pane .field .val{color:var(--charcoal);font-weight:450}
+.duo .pane .field .key{color:var(--mist);font-weight:400}
+.duo .pane .field .val{color:var(--charcoal);font-weight:500}
 .duo .pane .alert{
   margin-top:24px;padding:16px 20px;background:rgba(181,69,44,.04);
   font-size:.68rem;color:var(--rust);line-height:1.7;letter-spacing:.02em;
@@ -127,8 +129,8 @@ body{
 .metro-schematic .station .dot.origin{border:2px solid var(--ink);background:var(--paper);width:14px;height:14px}
 .metro-schematic .station .dot.interchange{background:var(--gold);width:14px;height:14px}
 .metro-schematic .station .dot.dest{background:var(--rust);width:14px;height:14px}
-.metro-schematic .station .name{font-size:.72rem;font-weight:450;white-space:nowrap}
-.metro-schematic .station .name.muted{color:var(--mist);font-weight:350;font-size:.68rem}
+.metro-schematic .station .name{font-size:.72rem;font-weight:500;white-space:nowrap}
+.metro-schematic .station .name.muted{color:var(--mist);font-weight:400;font-size:.68rem}
 .metro-schematic .connector{height:1px;background:rgba(0,0,0,.1);min-width:24px;margin:0 8px;flex-shrink:0}
 .metro-schematic .leg-summary{
   font-size:.64rem;color:var(--mist);letter-spacing:.06em;margin-left:12px
@@ -145,10 +147,10 @@ body{
   content:'';position:absolute;left:70px;top:0;bottom:0;
   width:1px;background:rgba(0,0,0,.08);
 }
-.timeline .entry{position:relative;margin-bottom:36px;display:flex;gap:0}
+.timeline .entry{position:relative;margin-bottom:36px}
 .timeline .entry .time{
   position:absolute;left:-120px;top:0;width:96px;text-align:right;
-  font-size:.82rem;font-weight:450;color:var(--ink);letter-spacing:.02em;
+  font-size:.82rem;font-weight:500;color:var(--ink);letter-spacing:.02em;
   font-family:var(--font-serif);
 }
 .timeline .entry .dot{
@@ -157,8 +159,8 @@ body{
 }
 .timeline .entry .dot.highlight{background:var(--gold);border-color:var(--gold)}
 .timeline .entry .body{padding-left:36px}
-.timeline .entry .body .action{font-size:.82rem;font-weight:450;color:var(--ink)}
-.timeline .entry .body .hint{font-size:.68rem;color:var(--mist);margin-top:4px;font-weight:350;letter-spacing:.02em}
+.timeline .entry .body .action{font-size:.82rem;font-weight:500;color:var(--ink)}
+.timeline .entry .body .hint{font-size:.68rem;color:var(--mist);margin-top:4px;font-weight:400;letter-spacing:.02em}
 
 /* ═══ NOTES ═══ */
 .note{
@@ -167,14 +169,14 @@ body{
   display:flex;gap:20px;
 }
 .note .note-label{font-size:.62rem;letter-spacing:.16em;color:var(--rust);font-weight:500;min-width:56px}
-.note .note-text{color:var(--charcoal);font-weight:350}
+.note .note-text{color:var(--charcoal);font-weight:400}
 
 /* ═══ CLOSING ═══ */
 .closing{
   text-align:center;padding:100px 0 60px;
-  font-size:.72rem;color:var(--mist);letter-spacing:.08em;line-height:2.5;font-weight:350;
+  font-size:.72rem;color:var(--mist);letter-spacing:.08em;line-height:2.5;font-weight:400;
 }
-.closing em{font-style:normal;color:var(--ink);font-weight:450}
+.closing em{font-style:normal;color:var(--ink);font-weight:600}
 
 /* ═══ MOBILE ═══ */
 @media(max-width:640px){
